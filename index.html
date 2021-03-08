@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>中古モバイル査定システム</title>
+  <link rel="stylesheet" href="css/reset.min.css">
+  <link rel="stylesheet" href="css/styleseet.css">
+  <link rel="stylesheet" href="css/button.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <script type="text/javascript">
+    function showBalloon() {
+      var wObjballoon = document.getElementById("makeImg");
+      if (wObjballoon.className == "balloon-none") {
+        wObjballoon.className = "balloon";
+      } else {
+        wObjballoon.className = "balloon-none";
+      }
+    }
+  </script>
+  <script type="text/javascript">
+    function checkForm($this) {
+      var str = $this.value;
+      while (str.match(/[^A-Z^a-z\d\-]/)) {
+        str = str.replace(/[^A-Z^a-z\d\-]/, "");
+      }
+      $this.value = str;
+    }
+  </script>
+</head>
+<body>
+  <header class="header-main">
+    <a href="1001.html" class="header-logo">
+      中古モバイル査定システム
+    </a>
+    <nav role="navigation">
+      <ul class="header-menu">
+        <li>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="balloon-none" id="makeImg">
+    <div class="error">
+      <p class="loginer">IDまたはパスワードに誤りがあります。</p>
+    </div>
+  </div>
+
+  <div class="container-login">
+    <div class="container-login_title">
+      <img src="images/1001.jpg" alt="ecomoロゴ">
+      <h1>中古モバイル査定システム</h1>
+    </div>
+    <div class="container-login_wrapper">
+      <input type="text" value="" onInput="checkForm(this)" placeholder="店舗コード">
+    </div>
+    <div class="container-login_wrapper">
+      <input type="text" value="" onInput="checkForm(this)" placeholder="パスワード">
+    </div>
+    <div class="container-login_btn">
+      <a href="2001.html" class="btn-secondary">ログイン</a>
+    </div>
+    <div class="container-login_btn">
+      <a href="###" class="btn-primary" onclick="showBalloon()">確認用：エラー</a>
+    </div>
+    <footer class="footer-copywrite">
+      <p>©株式会社クリエージェンシー</p>
+    </footer>
+  </div>
+
+</body>
+</html>
